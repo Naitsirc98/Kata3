@@ -21,9 +21,11 @@ public class Histogram<T> {
 	}
 	
 	public void increment(T key) {
-		
 		map.put(key, map.containsKey(key) ? map.get(key)+1:1);
-
+	}
+	
+	public void increment(T key, int times) {
+		map.put(key, map.containsKey(key) ? map.get(key)+times:times);
 	}
 	
 }

@@ -6,7 +6,6 @@ public class Kata3 {
 
 	public static void main(String[] args) {
 		
-		
 		String[] emails = {"ulpgc.es", "gmail.com","hotmail.com","origin.com"};
 		
 		Histogram<String> histogram = new Histogram<>();
@@ -14,9 +13,7 @@ public class Kata3 {
 		Random rand = new Random(System.currentTimeMillis());
 		
 		for(String email : emails) {
-			for(int i = 0;i < rand.nextInt(10);i++) {
-				histogram.increment(email);
-			}
+			histogram.increment(email, rand.nextInt(100));
 		}
 		
 		HistogramDisplay display = new HistogramDisplay(histogram);
